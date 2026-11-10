@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Big -10 Playoff Picture Board</title>
+<style>
+  :root {
+    --bg: #0e1218;
+    --panel: #171d28;
+    --line: #313a4b;
+    --text: #e7edf6;
+    --muted: #a3adbd;
+    --gold: #e0b45a;
+    --gold-dim: #6e5728;
+    --bubble: #f0c56a;
+    --bubble-bg: #3a2f16;
+    --curtis: #9ec0ff;
+    --curtis-bg: #1c283c;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 12.5px/1.22 "Segoe UI", system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 6px 10px 6px;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 650;
+    letter-spacing: 0.01em;
+  }
+  .stamp {
+    margin: 1px 0 0;
+    color: var(--gold);
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .limit {
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .limit strong, .basis strong, .note strong { color: var(--text); font-weight: 700; }
+  main {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.28fr) minmax(340px, 0.92fr);
+    gap: 8px;
+    margin-top: 5px;
+    align-items: stretch;
+  }
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 6px 8px 6px;
+    min-width: 0;
+  }
+  h2 {
+    margin: 0 0 3px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  caption {
+    caption-side: bottom;
+    text-align: left;
+    color: var(--muted);
+    font-size: 12px;
+    padding-top: 5px;
+  }
+  th, td {
+    text-align: left;
+    padding: 3px 6px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+  }
+  th {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  td.num, th.num { text-align: right; }
+  tr.curtis td {
+    background: var(--curtis-bg);
+    box-shadow: inset 3px 0 0 var(--curtis);
+  }
+  tr.cut td {
+    background: #2a2416;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 0.02em;
+    text-align: center;
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    padding: 4px 6px;
+  }
+  .state {
+    display: inline-block;
+    background: var(--bubble-bg);
+    color: var(--bubble);
+    border: 1px solid var(--gold-dim);
+    border-radius: 999px;
+    padding: 0 7px;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.06em;
+  }
+  .who { font-weight: 650; }
+  .sub { color: var(--muted); font-weight: 450; }
+  .basis, .note { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
+  h3 { margin: 4px 0 0; font-size: 12.5px; }
+  footer {
+    margin-top: 4px;
+    border-top: 1px solid var(--line);
+    padding-top: 3px;
+  }
+  footer .name { margin: 0; font-size: 13px; font-weight: 700; }
+  footer .stamp { font-size: 12.5px; }
+  footer .league { margin: 0; color: var(--muted); font-size: 12px; }
+  @media (max-width: 980px) {
+    body { display: block; }
+    main { display: block; }
+    section + section { margin-top: 8px; }
+  }
+  @media (min-width: 1100px) and (min-height: 760px) {
+    body { font-size: 14.5px; line-height: 1.28; }
+    header h1 { font-size: 22px; }
+    .stamp { font-size: 14px; }
+    .limit, .basis, .note, footer .league { font-size: 13.5px; }
+    footer .name { font-size: 14px; }
+    h3 { font-size: 14.5px; }
+    th, td { padding: 4px 6px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>The Big -10 Playoff Picture Board</h1>
+</header>
+<p class="stamp" id="generation-stamp">As of Week 9, 2026. Generated Week 9, 2026-11-09T20:02:48Z.</p>
+<p class="limit"><strong>As-of limit.</strong> Latest complete 8-team standings are after Week 7 (Tuesday Week 8 plan, audit Tue Oct 27, 2026). Week 9 on this page is the Tue Nov 3, 2026 partial only: Team 1 and the #4 cutoff. Sun Nov 8, 2026 results are not recorded. The after-Week-7 order is not a Week 9 order.</p>
+<main>
+  <section aria-labelledby="standings-heading">
+    <h2 id="standings-heading">Standings after Week 7</h2>
+    <table>
+      <caption>PF is points for. Points against is not in the record set, so it is not a column. Playoff format as recorded: 4 teams qualify, Weeks 16–17. The gold line is the last playoff position on this after-Week-7 order.</caption>
+      <thead>
+        <tr>
+          <th class="num">Rank</th>
+          <th>Team</th>
+          <th class="num">W-L</th>
+          <th class="num">PF</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">1</td>
+          <td class="who">Cody</td>
+          <td class="num">6-1</td>
+          <td class="num">1056.94</td>
+          <td><span class="state">BUBBLE</span></td>
+        </tr>
+        <tr>
+          <td class="num">2</td>
+          <td class="who">Steven's Dumb Team <span class="sub">(Blake Brainard)</span></td>
+          <td class="num">5-2</td>
+          <td class="num">1003.60</td>
+          <td><span class="state">BUBBLE</span></td>
+        </tr>
+        <tr>
+          <td class="num">3</td>
+          <td class="who">Andrew C.</td>
+          <td class="num">5-2</td>
+          <td class="num">999.58</td>
+          <td><span class="state">BUBBLE</span></td>
+        </tr>
+        <tr>
+          <td class="num">4</td>
+          <td class="who">Steven's Smart Team <span class="sub">(Steven McAnnally)</span></td>
+          <td class="num">4-3</td>
+          <td class="num">936.48</td>
+          <td><span class="state">BUBBLE</span></td>
+        </tr>
+        <tr class="cut">
+          <td colspan="5">Playoff cut — 4th is the last playoff position on this after-Week-7 order</td>
+        </tr>
+        <tr>
+          <td class="num">5</td>
+          <td class="who">Jacks's Finest Team <span class="sub">(Jacks Smith)</span></td>
+          <td class="num">3-4</td>
+          <td class="num">902.72</td>
+          <td><span class="state">BUBBLE</span></td>
+        </tr>
+        <tr>
+          <td class="num">6</td>
+          <td class="who">J-D and the Boys <span class="sub">(Jared Smith)</span></td>
+          <td class="num">2-5</td>
+          <td class="num">873.00</td>
+          <td><span class="state">BUBBLE</span></td>
+        </tr>
+        <tr class="curtis">
+          <td class="num">7</td>
+          <td class="who">Team 1 <span class="sub">(Curtis Noonan)</span></td>
+          <td class="num">2-5</td>
+          <td class="num">732.84</td>
+          <td><span class="state">BUBBLE</span></td>
+        </tr>
+        <tr>
+          <td class="num">8</td>
+          <td class="who">Ryan</td>
+          <td class="num">1-6</td>
+          <td class="num">765.46</td>
+          <td><span class="state">BUBBLE</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="basis"><strong>State basis, all eight teams: BUBBLE.</strong> A clinched designation (IN) is not made. An eliminated designation (OUT) is not made. Full standings after Week 8 and after Week 9 are not recorded, the other seven teams' remaining schedules are not recorded, and the formal tiebreak rule is not recorded. No best finish and no worst finish is computed.</p>
+  </section>
+  <section aria-labelledby="path-heading">
+    <h2 id="path-heading">Team 1 path</h2>
+    <p class="note">Curtis's team in the record set is Team 1, teamId 5.</p>
+    <h3>Week 9 partial record</h3>
+    <p class="note">Tue Nov 3, 2026 audit. Sun Nov 8, 2026 results are not recorded.</p>
+    <p class="note"><strong>Team 1:</strong> 3-5, 6th, PF 857.98.</p>
+    <p class="note"><strong>#4 cutoff:</strong> 5-3, PF 1101.12. Steven's Smart Team held #4.</p>
+    <p class="note"><strong>Recorded gap to that line:</strong> 2 wins and 243.14 PF. This is the deficit at the audit. It is not a count of wins still required.</p>
+    <h3>Wins needed</h3>
+    <p class="note"><strong>Not computed.</strong> Team 1 has 6 games left, Weeks 10–15. The wins a playoff position requires are not stated: the other teams' Week 9 records and remaining schedules are not in the record set.</p>
+    <h3>Opponents on the recorded schedule</h3>
+    <p class="note">Team 1's remaining schedule, recorded Oct 22, 2026. Other teams' remaining fixtures are not recorded, so they are not listed.</p>
+    <p class="note">Week 10 at Steven's Dumb Team. Week 11 at Ryan. Week 12 vs Cody. Week 13 at Andrew C. Week 14 at Jacks's Finest Team. Week 15 vs J-D and the Boys.</p>
+    <p class="note">Week 9 opponent, recorded as just played: vs Steven's Smart Team. The final result is not recorded.</p>
+    <h3>Teams between Team 1 and the cut</h3>
+    <p class="note">At the Week 9 audit, Team 1 is 6th and Steven's Smart Team held 4th. The 5th-place team at that audit is not recorded. After Week 7 only, the teams between 7th and the cut are Jacks's Finest Team and J-D and the Boys. That order is not the Week 9 order. Their remaining fixtures are not recorded.</p>
+    <h3>Tiebreak state</h3>
+    <p class="note"><strong>Not stated as an outcome.</strong> The formal tiebreak rule is not in the record set, so this board does not say where a tie at the cut would fall, and it names no team in a tie. The basis the desk recorded for its own computations, not applied here as the league rule, is wins, then total PF.</p>
+  </section>
+</main>
+<footer>
+  <p class="name">The Big -10 Playoff Picture Board</p>
+  <p class="stamp">As of Week 9, 2026. Generated Week 9, 2026-11-09T20:02:48Z.</p>
+  <p class="league">League record: The Big -10, leagueId 988331156, 8 teams. One snapshot from the Week 9 record set. No later week is shown.</p>
+</footer>
+</body>
+</html>
